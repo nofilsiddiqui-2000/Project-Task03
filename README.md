@@ -2,7 +2,7 @@
 
 ## 📘 Overview
 
-This repository builds upon the core **Robot Simulator** project, developed by [TwinkalChristian/robot-simulator](https://github.com/TwinkalChristian/robot-simulator). As part of our software testing course, our team's assigned role was to act as the **QA team** for their implementation. This project specifically applies black-box and white-box testing techniques to validate, analyze, and improve the quality of their application.
+This repository builds upon the core **Robot Simulator** project, developed by [TwinkalChristian/robot-simulator](https://github.com/TwinkalChristian/robot-simulator). As part of our software quality assurance course, our team's assigned role was to act as the **QA team** for their implementation. This project specifically applies black-box and white-box testing techniques to validate, analyze, and improve the quality of their application.
 
 ---
 
@@ -29,7 +29,7 @@ The goal of this phase is to ensure the reliability and correctness of the Robot
 
 - **JUnit**: For automated unit testing  
 - **Mutation Testing**: Using PIT (Pitest) to introduce faults and observe test suite behavior  
-- **Coverage Tools**: JaCoCo or IntelliJ's built-in analyzer to measure line/branch/method coverage  
+- **Coverage Tools**: JaCoCo and Eclipse built-in analyzer to measure line/branch/method coverage  
 - **Boundary and Edge Testing**: To validate robot behavior under grid limits and invalid inputs  
 - **Regression Testing**: Ensuring that new tests do not break previous valid functionality
 
@@ -52,9 +52,13 @@ robot-simulator-testing/
 ├── src/
 │   ├── main/java/          # Original application logic
 │   └── test/java/          # Test cases and testing utilities
-├── pit-reports/            # Mutation testing reports
-├── coverage/               # Code coverage reports
-├── pom.xml / build.gradle  # Build system
+├── target/
+│   ├── site/
+│   │   └── jacoco/         # JaCoCo coverage report
+│   │       └── index.html
+│   └── pit-reports/        # Mutation testing reports
+│       └── index.html
+├── pom.xml                 # Maven build configuration
 └── README.md
 ```
 
@@ -69,7 +73,7 @@ robot-simulator-testing/
     cd robot-simulator-testing
     ```
 
-2. **Build the project** (Maven/Gradle based):
+2. **Build the project** (Maven based):
 
     ```bash
     mvn clean install
@@ -106,8 +110,8 @@ public void testMoveForwardWithPenDown() {
 
 ## 📟 Reports
 
-- **Code Coverage**: `/coverage/index.html`
-- **Mutation Report**: `/pit-reports/index.html`
+- **Code Coverage**: `target/site/jacoco/index.html`
+- **Mutation Report**: `target/pit-reports/index.html`
 
 ---
 
