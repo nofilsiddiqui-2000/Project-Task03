@@ -1,50 +1,8 @@
-<!-- # Robot Simulator
-
-## Project Description
-The **Robot Simulator** is a program that simulates the movement of a robot in a grid. The robot can move around, trace out shapes, and control its pen (up or down). Users can issue commands to control the robot's movement and behavior in the grid.
-
-## Features
-- Pen up/down to control drawing
-- Move robot in different directions (North, South, East, West)
-- Print the grid and robot status
-- Replay previous commands
-- Initialize/reset the robot
-
-## Commands
-- `[U|u]`: Pen up
-- `[D|d]`: Pen down
-- `[R|r]`: Turn right
-- `[L|l]`: Turn left
-- `[M s|m s]`: Move forward s spaces (s is a non-negative integer)
-- `[P|p]`: Print the grid and display indices
-- `[C|c]`: Print the current position of the pen and its facing direction
-- `[Q|q]`: Stop the program
-- `[I n|i n]`: Initialize the system with an N by N grid
-- `[H|h]`: Replay all steps from the last system start
-
-## Installation
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/TwinkalChristian/robot-simulator.git
-    ```
-
-2. Navigate into the project directory:
-    ```bash
-    cd robot-simulator
-    ```
-
-3. Ensure you have Java installed and configured.
-
-## Usage
-To run the program, execute the following command:
-```bash
-java -jar robot-simulator.jar -->
-
 # Robot Simulator – Software Testing Suite
 
 ## 📘 Overview
 
-This repository builds upon the core **Robot Simulator** project, shifting the focus toward rigorous **software testing and validation** practices. It aims to evaluate and improve the testability, fault tolerance, and correctness of the robot simulator using automated test frameworks, mutation testing tools, and coverage metrics.
+This repository builds upon the core **Robot Simulator** project, developed by [TwinkalChristian/robot-simulator](https://github.com/TwinkalChristian/robot-simulator). As part of our software quality assurance course, our team's assigned role was to act as the **QA team** for their implementation. This project specifically applies black-box and white-box testing techniques to validate, analyze, and improve the quality of their application.
 
 ---
 
@@ -57,6 +15,13 @@ The goal of this phase is to ensure the reliability and correctness of the Robot
 - Analysis and improvement of **test suite effectiveness**
 - Evaluation of **code coverage** using tooling support
 - Introduction of additional test scenarios, including edge and negative cases
+- Fulfillment of the following course-specific testing tasks:
+  - (a) Statement coverage > 50%
+  - (b) Decision coverage > 50%
+  - (c) Condition coverage > 50%
+  - (d) Multiple condition coverage > 50%
+  - (e) Mutation testing on selected function
+  - (f) Data flow testing on selected function
 
 ---
 
@@ -91,3 +56,62 @@ robot-simulator-testing/
 ├── coverage/               # Code coverage reports
 ├── pom.xml / build.gradle  # Build system
 └── README.md
+```
+
+---
+
+## 🛠️ Getting Started
+
+1. **Clone the repository**:
+
+    ```bash
+    git clone https://github.com/your-username/robot-simulator-testing.git
+    cd robot-simulator-testing
+    ```
+
+2. **Build the project** (Maven/Gradle based):
+
+    ```bash
+    mvn clean install
+    ```
+
+3. **Run tests**:
+
+    ```bash
+    mvn test
+    ```
+
+4. **Run mutation testing**:
+
+    ```bash
+    mvn org.pitest:pitest-maven:mutationCoverage
+    ```
+
+---
+
+## 🧪 Sample Test Case
+
+```java
+@Test
+public void testMoveForwardWithPenDown() {
+    Robot robot = new Robot(10);
+    robot.penDown();
+    robot.move(5);
+    assertEquals(5, robot.getX());
+    assertTrue(robot.isDrawing());
+}
+```
+
+---
+
+## 📟 Reports
+
+- **Code Coverage**: `/coverage/index.html`
+- **Mutation Report**: `/pit-reports/index.html`
+
+---
+
+## 🔗 Related Repositories
+
+- 👉 [Core Robot Simulator](https://github.com/TwinkalChristian/robot-simulator): Base implementation repo.
+
