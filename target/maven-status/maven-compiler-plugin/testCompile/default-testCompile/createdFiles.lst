@@ -1,0 +1,4 @@
+com\robot\robot_simulator\AppTest.class
+com\robot\robot_simulator\CommandHandlerTest.class
+com\robot\robot_simulator\GridTest.class
+com\robot\robot_simulator\RobotTest.class

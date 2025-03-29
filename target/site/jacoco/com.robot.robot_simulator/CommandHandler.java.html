@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CommandHandler.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">robot-simulator</a> &gt; <a href="index.source.html" class="el_package">com.robot.robot_simulator</a> &gt; <span class="el_source">CommandHandler.java</span></div><h1>CommandHandler.java</h1><pre class="source lang-java linenums">package com.robot.robot_simulator;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class CommandHandler {
+    private final Robot robot;
+    private final Grid grid;
+    private final List&lt;String&gt; commandHistory;
+
+<span class="fc" id="L11">    public CommandHandler(int gridSize) {</span>
+<span class="fc" id="L12">        this.robot = new Robot();</span>
+<span class="fc" id="L13">        this.grid = new Grid(gridSize);</span>
+<span class="fc" id="L14">        this.commandHistory = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L15">    }</span>
+
+<span class="fc" id="L17">    public CommandHandler(Robot robot, Grid grid) {  // Added constructor</span>
+<span class="fc" id="L18">        this.robot = robot;</span>
+<span class="fc" id="L19">        this.grid = grid;</span>
+<span class="fc" id="L20">        this.commandHistory = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L21">    }</span>
+
+    public void processCommand(String command) {
+<span class="fc" id="L24">        commandHistory.add(command); // Store command history for replay</span>
+<span class="fc" id="L25">        String[] parts = command.split(&quot; &quot;);</span>
+<span class="fc" id="L26">        String cmd = parts[0].toUpperCase();</span>
+
+        try {
+<span class="fc bfc" id="L29" title="All 9 branches covered.">            switch (cmd) {</span>
+                case &quot;M&quot;:
+<span class="fc bfc" id="L31" title="All 2 branches covered.">                    if (parts.length &lt; 2) {</span>
+<span class="fc" id="L32">                        System.out.println(&quot;Invalid format. Use: M &lt;steps&gt;&quot;);</span>
+<span class="fc" id="L33">                        return;</span>
+                    }
+<span class="fc" id="L35">                    int steps = Integer.parseInt(parts[1]);</span>
+<span class="fc bfc" id="L36" title="All 2 branches covered.">                    if (steps &lt; 0) {</span>
+<span class="fc" id="L37">                        System.out.println(&quot;Steps must be non-negative.&quot;);</span>
+<span class="fc" id="L38">                        return;</span>
+                    }
+<span class="fc" id="L40">                    robot.move(steps, grid);</span>
+<span class="fc" id="L41">                    break;</span>
+                case &quot;L&quot;:
+<span class="fc" id="L43">                    robot.turnLeft();</span>
+<span class="fc" id="L44">                    break;</span>
+                case &quot;R&quot;:
+<span class="fc" id="L46">                    robot.turnRight();</span>
+<span class="fc" id="L47">                    break;</span>
+                case &quot;D&quot;:
+<span class="fc" id="L49">                    robot.setPenDown(true);</span>
+<span class="fc" id="L50">                    break;</span>
+                case &quot;U&quot;:
+<span class="fc" id="L52">                    robot.setPenDown(false);</span>
+<span class="fc" id="L53">                    break;</span>
+                case &quot;P&quot;:
+<span class="fc" id="L55">                    grid.printGrid();</span>
+<span class="fc" id="L56">                    break;</span>
+                case &quot;C&quot;:
+<span class="fc" id="L58">                    System.out.println(robot.getStatus());</span>
+<span class="fc" id="L59">                    break;</span>
+                case &quot;H&quot;:
+<span class="fc" id="L61">                    replayHistory();</span>
+<span class="fc" id="L62">                    break;</span>
+                default:
+<span class="fc" id="L64">                    System.out.println(&quot;Invalid command. Try again.&quot;);</span>
+            }
+<span class="fc" id="L66">        } catch (NumberFormatException e) {</span>
+<span class="fc" id="L67">            System.out.println(&quot;Invalid number format.&quot;);</span>
+<span class="fc" id="L68">        }</span>
+<span class="fc" id="L69">    }</span>
+
+    private void replayHistory() {
+<span class="fc" id="L72">        System.out.println(&quot;Replaying history...&quot;);</span>
+<span class="fc" id="L73">        grid.printGrid();</span>
+<span class="fc bfc" id="L74" title="All 2 branches covered.">        for (String command : commandHistory) {</span>
+<span class="fc" id="L75">            System.out.println(&quot;&gt; &quot; + command);</span>
+<span class="fc" id="L76">        }</span>
+<span class="fc" id="L77">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

@@ -1,0 +1,5 @@
+# Created at 2025-03-29T00:15:25.628
+Boot Manifest-JAR contains absolute paths in classpath 'D:\Concordia University\COEN 6761 - Software Testing and Validation\Project\Task3\robot-simulator-main\target\test-classes'
+Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
+'other' has different root
+

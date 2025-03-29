@@ -1,0 +1,5 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+robot-simulator,com.robot.robot_simulator,CommandHandler,0,150,0,15,0,48,0,15,0,4
+robot-simulator,com.robot.robot_simulator,Robot,0,168,3,18,0,31,3,19,0,7
+robot-simulator,com.robot.robot_simulator,App,3,77,0,10,1,25,1,6,1,1
+robot-simulator,com.robot.robot_simulator,Grid,0,90,0,22,0,17,0,16,0,5
