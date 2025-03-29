@@ -2,7 +2,7 @@
 
 ## 📘 Overview
 
-This repository builds upon the core **Robot Simulator** project, developed by [TwinkalChristian/robot-simulator](https://github.com/TwinkalChristian/robot-simulator). As part of our software quality assurance course, our team's assigned role was to act as the **QA team** for their implementation. This project specifically applies black-box and white-box testing techniques to validate, analyze, and improve the quality of their application.
+This repository builds upon the core **Robot Simulator** project, developed by [TwinkalChristian/robot-simulator](https://github.com/TwinkalChristian/robot-simulator). As part of our software testing course, our team's assigned role was to act as the **QA team** for their implementation. This project specifically applies black-box and white-box testing techniques to validate, analyze, and improve the quality of their application.
 
 ---
 
