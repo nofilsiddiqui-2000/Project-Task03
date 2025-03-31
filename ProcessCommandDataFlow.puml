@@ -1,0 +1,63 @@
+@startuml
+title Data-Flow Graph for processCommand(String command)
+
+start
+
+:U(command)\ncommandHistory.add(command);
+
+:U(command)\nD(parts)\nparts = command.split(" ");
+
+:D(cmd)\nU(parts)\ncmd = parts[0].toUpperCase();
+
+:U(cmd)\nswitch(cmd);
+
+group Case M
+    if ("U(parts)\nparts.length < 2") then (true)
+        :return;
+        stop
+    else (false)
+        :U(parts)\nD(steps)\nsteps = Integer.parseInt(parts[1]);
+
+        if ("U(steps)\nsteps < 0") then (true)
+            :return;
+            stop
+        else (false)
+            :U(steps)\nU(robot)\nU(grid)\nrobot.move(steps, grid);
+        endif
+    endif
+end group
+
+group Case L
+    :U(robot)\nrobot.turnLeft();
+end group
+
+group Case R
+    :U(robot)\nrobot.turnRight();
+end group
+
+group Case D
+    :U(robot)\nrobot.setPenDown(true);
+end group
+
+group Case U
+    :U(robot)\nrobot.setPenDown(false);
+end group
+
+group Case P
+    :U(grid)\ngrid.printGrid();
+end group
+
+group Case C
+    :U(robot)\nrobot.getStatus();
+end group
+
+group Case H
+    :U(commandHistory)\nreplayHistory();
+end group
+
+group Default
+    :"Invalid command. Try again.";
+end group
+
+stop
+@enduml

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.robot.robot_simulator.CommandHandlerTest" time="0.032" tests="14" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.robot.robot_simulator.DataFlowTest" time="0.002" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -58,18 +58,5 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="testPenDownCommand" classname="com.robot.robot_simulator.CommandHandlerTest" time="0.002"/>
-  <testcase name="testMoveCommandWithSteps" classname="com.robot.robot_simulator.CommandHandlerTest" time="0.001"/>
-  <testcase name="testPenUpCommand" classname="com.robot.robot_simulator.CommandHandlerTest" time="0"/>
-  <testcase name="testGridMarkingWithInjectedConstructor" classname="com.robot.robot_simulator.CommandHandlerTest" time="0"/>
-  <testcase name="testTurnLeftCommand" classname="com.robot.robot_simulator.CommandHandlerTest" time="0"/>
-  <testcase name="testInvalidCommand" classname="com.robot.robot_simulator.CommandHandlerTest" time="0"/>
-  <testcase name="testPrintStatusCommand" classname="com.robot.robot_simulator.CommandHandlerTest" time="0.001"/>
-  <testcase name="testMoveCommandInjectedConstructor" classname="com.robot.robot_simulator.CommandHandlerTest" time="0.004"/>
-  <testcase name="testHistoryReplayCommand" classname="com.robot.robot_simulator.CommandHandlerTest" time="0"/>
-  <testcase name="testPrintGridCommand" classname="com.robot.robot_simulator.CommandHandlerTest" time="0"/>
-  <testcase name="testTurnRightWithInjectedConstructor" classname="com.robot.robot_simulator.CommandHandlerTest" time="0.001"/>
-  <testcase name="testMoveCommandWithInvalidSteps" classname="com.robot.robot_simulator.CommandHandlerTest" time="0"/>
-  <testcase name="testMoveCommandWithNegativeSteps" classname="com.robot.robot_simulator.CommandHandlerTest" time="0"/>
-  <testcase name="testMoveCommandWithoutSteps" classname="com.robot.robot_simulator.CommandHandlerTest" time="0.001"/>
+  <testcase name="testDataFlowCoverage" classname="com.robot.robot_simulator.DataFlowTest" time="0.002"/>
 </testsuite>
