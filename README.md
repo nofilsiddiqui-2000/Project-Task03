@@ -118,4 +118,3 @@ public void testMoveForwardWithPenDown() {
 ## 🔗 Related Repositories
 
 - 👉 [Core Robot Simulator](https://github.com/TwinkalChristian/robot-simulator): Base implementation repo.
-
