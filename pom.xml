@@ -92,16 +92,18 @@
                 <artifactId>pitest-maven</artifactId>
                 <version>1.15.2</version>
                 <configuration>
+                    <!-- Target all classes in the com.robot.robot_simulator package -->
                     <targetClasses>
-                        <param>com.robot.robot_simulator.Robot</param>
+                        <param>com.robot.robot_simulator.*</param>
                     </targetClasses>
+                    <!-- Target all test classes in the com.robot.robot_simulator package -->
                     <targetTests>
-                        <param>com.robot.robot_simulator.RobotTest</param>
+                        <param>com.robot.robot_simulator.*Test</param>
                     </targetTests>
                     <outputFormats>
-                        <param>HTML</param>
+                        <param>HTML</param>  <!-- Output format as HTML for easy reading -->
                     </outputFormats>
-                    <testPlugin>junit5</testPlugin>
+                    <testPlugin>junit5</testPlugin> <!-- Use JUnit 5 for mutation testing -->
                 </configuration>
                 <dependencies>
                     <dependency>
